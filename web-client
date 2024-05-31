@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+</head>
+<body>
+    <h1>User Management</h1>
+
+    <!-- Luo uusi käyttäjä -->
+    <h2>Create a new user</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="createUser()">Create User</button>
+
+    <!-- Login -->
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+
+    <!-- Näytä käyttäjädata -->
+    <h2>User Data</h2>
+    <div id="userData"></div>
+
+    <!-- Näytä käyttäjät (admin) -->
+    <h2>List of Users (Admin only)</h2>
+    <div id="userList"></div>
+
+    <!-- Poista käyttäjä (admin) -->
+    <h2>Delete User (Admin only)</h2>
+    <input type="text" id="deleteUserId" placeholder="User ID">
+    <button onclick="deleteUser()">Delete User</button>
+
+    <!-- Päivitä käyttäjä (admin) -->
+    <h2>Update User (Admin only)</h2>
+    <input type="text" id="updateUserId" placeholder="User ID">
+    <input type="text" id="updateUsername" placeholder="New Username">
+    <input type="password" id="updatePassword" placeholder="New Password">
+    <button onclick="updateUser()">Update User</button>
+
+    <script>
+        async function createUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+        }
+
+        async function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+        }
+
+        async function getUserData() {
+            const userId = getUserIdFromLoggedInUser();
+        }
+
+        async function listUsers() {
+        }
+
+        async function deleteUser() {
+            const userId = document.getElementById('deleteUserId').value;
+        }
+
+        async function updateUser() {
+            const userId = document.getElementById('updateUserId').value;
+            const newUsername = document.getElementById('updateUsername').value;
+            const newPassword = document.getElementById('updatePassword').value;
+        }
+    </script>
+</body>
+</html>
